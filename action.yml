@@ -2,19 +2,65 @@ name: Platform Connectivity Preparation
 description: Use it to prepare the needed config and secrets to connect to ECP platforms
 author: k24 devops team
 
+inputs:
+  kubeconfig:
+    description: 'Number of Octocats'
+    required: false
+  platform_env:
+    description: 'Number of Octocats'
+    required: false
+  platform_id:
+    description: 'Number of Octocats'
+    required: false
+  top_zone_name:
+    description: 'Number of Octocats'
+    required: false
+  inbound_endpoint_ip_a:
+    description: 'Number of Octocats'
+    required: false
+  inbound_endpoint_ip_b:
+    description: 'Number of Octocats'
+    required: false
+  inbound_endpoint_ip_c:
+    description: 'Number of Octocats'
+    required: false
+  vault_git_token:
+    description: 'Number of Octocats'
+    required: false
+  platform_code_values_dir:
+    description: 'Number of Octocats'
+    required: false
+  helm_version:
+    description: 'Number of Octocats'
+    required: false
+  kubectl_version:
+    description: 'Number of Octocats'
+    required: false
+  vault_version:
+    description: 'Number of Octocats'
+    required: false
+  aws_iam_auth_version:
+    description: 'Number of Octocats'
+    required: false
+  hostess_version:
+    description: 'Number of Octocats'
+    required: false
+
+
 runs:
   using: "composite"
   steps:
     - name: Setup Environment with VPN
       run: |
         bash scripts/setup_env.sh
-    - name: Get Config and secrets files
-      run: |
-        bash -x scripts/get_config_and_secrets.sh
-    - name: Prepare k8s connectivity
-      run: |
-        bash -x scripts/connect_to_k8s.sh
+        #    - name: Get Config and secrets files
+        #      run: |
+        #        bash -x scripts/get_config_and_secrets.sh
+        #    - name: Prepare k8s connectivity
+        #      run: |
+        #        bash -x scripts/connect_to_k8s.sh
 
 branding:
   icon: 'tool'
   color: 'blue'
+
