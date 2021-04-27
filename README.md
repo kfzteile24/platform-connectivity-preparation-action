@@ -1,1 +1,1 @@
-# platform-connectivity-preparation
+# platform-connectivity-preparation-action
