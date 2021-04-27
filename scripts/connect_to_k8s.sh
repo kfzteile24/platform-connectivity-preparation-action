@@ -20,11 +20,3 @@ if [[ $PLATFORM_ENV == "aws.live" ]];then
 	sudo hostess add "${EKS_DOMAIN}" "${EKS_IP}")
 fi
 
-# Check k8s connectivity:
-if [[ $(kubectl cluster-info |echo $?) -ne 0 ]]; then
-  echo "Unable to connect to k8s ..."
-  exit 1
-else
-  echo "Successfully connected to k8s"
-fi
-
