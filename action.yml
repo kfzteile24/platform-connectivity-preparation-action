@@ -1,0 +1,20 @@
+name: Platform Connectivity Preparation
+description: Use it to prepare the needed config and secrets to connect to ECP platforms
+author: k24 devops team
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Environment with VPN
+      run: |
+        bash scripts/setup_env.sh
+    - name: Get Config and secrets files
+      run: |
+        bash -x scripts/get_config_and_secrets.sh
+    - name: Prepare k8s connectivity
+      run: |
+        bash -x scripts/connect_to_k8s.sh
+
+branding:
+  icon: 'tool'
+  color: 'blue'
