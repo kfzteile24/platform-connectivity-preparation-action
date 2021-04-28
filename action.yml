@@ -53,6 +53,7 @@ runs:
     - name: Setup Environment with VPN
       run: |
         bash scripts/setup_env.sh
+      shell: bash
         #    - name: Get Config and secrets files
         #      run: |
         #        bash -x scripts/get_config_and_secrets.sh
