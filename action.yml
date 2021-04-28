@@ -50,6 +50,7 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - uses: actions/checkout@v2
     - name: Setup Environment with VPN
       run: |
         bash scripts/setup_env.sh
