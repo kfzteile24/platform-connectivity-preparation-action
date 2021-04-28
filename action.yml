@@ -3,14 +3,47 @@ description: Use it to prepare the needed config and secrets to connect to ECP p
 author: k24 devops team
 
 inputs:
+  vpn_profile:
+    description: 'ECP VPN profile'
+    required: true
+  aws_access_key_ID:
+    description: 'ECP platform aws access key'
+    required: true
+  aws_secret_access_key:
+    description: 'ECP platform aws secret key'
+    required: true
+  git_token:
+    description: 'ECP Github Token'
+    required: true
+  vault_git_token:
+    description: 'ECP Vault Token'
+    required: true
+  platform_code_values_dir:
+    description: 'Github Repo path of Platform-code'
+    required: true
+  platform_id:
+    description: 'ECP Platform name'
+    required: true
   kubeconfig:
     description: 'custom kubeconfig config'
     required: true
   platform_env:
     description: 'ECP AWS env'
     required: true
-  platform_id:
-    description: 'ECP Platform name'
+  vault_version:
+    description: 'vault client binary version'
+    required: true
+  helm_version:
+    description: 'Helm binary version'
+    required: true
+  kubectl_version:
+    description: 'kubectl binary version'
+    required: true
+  aws_iam_auth_version:
+    description: 'aws_iam_auth binary version'
+    required: true
+  hostess_version:
+    description: 'hostess binary version'
     required: true
   top_zone_name:
     description: 'naked domain name of the env'
@@ -23,27 +56,6 @@ inputs:
     required: true
   inbound_endpoint_ip_c:
     description: 'DNS IP Address of the EKS hosted zone'
-    required: true
-  vault_git_token:
-    description: 'ECP Vault Token'
-    required: true
-  platform_code_values_dir:
-    description: 'Github Repo path of Platform-code'
-    required: true
-  helm_version:
-    description: 'Helm binary version'
-    required: true
-  kubectl_version:
-    description: 'kubectl binary version'
-    required: true
-  vault_version:
-    description: 'vault client binary version'
-    required: true
-  aws_iam_auth_version:
-    description: 'aws_iam_auth binary version'
-    required: true
-  hostess_version:
-    description: 'hostess binary version'
     required: true
 
 

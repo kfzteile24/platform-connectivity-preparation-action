@@ -1,6 +1,12 @@
 #!/bin/bash
 set -euox pipefail
 
+# Establish ECP VPN connectivity
+echo "${VPN_PROFILE }" > KFZ_pritunl.vpn.ovpn
+sudo  openvpn --config KFZ_pritunl.vpn.ovpn --daemon
+sleep 10
+sudo netstat -nr
+
 # Config and secrets preparation:
 mkdir -p kube-config k8s/${PLATFORM_ID}
 export VAULT_ADDR="http://secrets.kfz42.de"
