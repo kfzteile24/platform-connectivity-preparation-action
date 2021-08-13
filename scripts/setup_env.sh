@@ -4,7 +4,7 @@ sudo apt-get update -y && sudo apt-get install -y openvpn screen python3.6-venv 
 && sudo pip install boto wheel
 
 # Install helm
-curl -Ls -o helm.tar.gz "https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-linux-amd64.tar.gz" \
+curl -Ls -o helm.tar.gz "https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz" \
   && tar -xvf helm.tar.gz \
   && chmod +x linux-amd64/helm \
   && sudo mv linux-amd64/helm /usr/local/bin/helm \
