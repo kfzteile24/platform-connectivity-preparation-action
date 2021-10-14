@@ -16,6 +16,7 @@ curl -Ls -o kubectl "https://storage.googleapis.com/kubernetes-release/release/v
   && sudo mv kubectl /usr/local/bin/kubectl
 
 # Install Vault client
+ls -la
 curl -Ls -O "https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip" \
 && unzip -o vault_${VAULT_VERSION}_linux_amd64.zip \
 && chmod +x vault \
