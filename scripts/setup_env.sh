@@ -19,6 +19,7 @@ curl -Ls -o kubectl "https://storage.googleapis.com/kubernetes-release/release/v
 ls -la
 curl -Ls -O "https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip" \
 && unzip -o vault_${VAULT_VERSION}_linux_amd64.zip \
+&& ls -la \
 && chmod +x vault \
 && sudo mv vault /usr/local/bin \
 && rm vault_${VAULT_VERSION}_linux_amd64.zip
