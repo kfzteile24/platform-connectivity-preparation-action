@@ -63,8 +63,9 @@ runs:
   using: "composite"
   steps:
     - name: Setup Environment with VPN
-      run: ${{ github.action_path }}/scripts/setup_env.sh
+      run: setup_env.sh
       shell: bash
+      working-directory: ${{ github.action_path }}/scripts
     - name: Get Config and secrets files
       run: ${{ github.action_path }}/scripts/get_config_and_secrets.sh
       shell: bash
