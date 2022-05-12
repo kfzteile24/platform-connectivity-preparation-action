@@ -23,7 +23,7 @@ curl -Ls -O "https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT
 && rm vault_${VAULT_VERSION}_linux_amd64.zip
 
 # Install aws-iam-authenticator
-curl -Ls -o aws-iam-authenticator "https://amazon-eks.s3-us-west-2.amazonaws.com/${AWS_IAM_AUTH_VERSION}/2021-01-05/bin/linux/amd64/aws-iam-authenticator"
+curl -Ls -o aws-iam-authenticator "https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v${AWS_IAM_AUTH_VERSION}/aws-iam-authenticator_${AWS_IAM_AUTH_VERSION}_linux_amd64"
 chmod +x aws-iam-authenticator
 sudo mv aws-iam-authenticator /usr/local/bin
 
