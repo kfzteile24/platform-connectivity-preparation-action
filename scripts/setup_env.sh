@@ -27,7 +27,3 @@ curl -Ls -o aws-iam-authenticator "https://github.com/kubernetes-sigs/aws-iam-au
 chmod +x aws-iam-authenticator
 sudo mv aws-iam-authenticator /usr/local/bin
 
-# Install Hostess
-curl -Ls -o  hostess "https://github.com/cbednarski/hostess/releases/download/v${HOSTESS_VERSION}/hostess_linux_amd64"
-chmod +x hostess
-sudo mv hostess /usr/local/bin/
