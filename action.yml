@@ -42,21 +42,6 @@ inputs:
   aws_iam_auth_version:
     description: 'aws_iam_auth binary version'
     required: true
-  hostess_version:
-    description: 'hostess binary version'
-    required: true
-  top_zone_name:
-    description: 'naked domain name of the env'
-    required: true
-  inbound_endpoint_ip_a:
-    description: 'DNS IP Address of the EKS hosted zone'
-    required: true
-  inbound_endpoint_ip_b:
-    description: 'DNS IP Address of the EKS hosted zone'
-    required: true
-  inbound_endpoint_ip_c:
-    description: 'DNS IP Address of the EKS hosted zone'
-    required: true
 
 
 runs:
