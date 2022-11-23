@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt-get update -y && sudo apt-get install -y openvpn screen python3.6-venv python3.6-dev\
+sudo apt-get update -y && sudo apt-get install -y openvpn screen python3.9-venv python3.9-dev\
 && sudo pip install boto wheel
 
 # Install helm
