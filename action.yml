@@ -6,12 +6,6 @@ inputs:
   vpn_profile:
     description: 'ECP VPN profile'
     required: true
-  aws_access_key_ID:
-    description: 'ECP platform aws access key'
-    required: true
-  aws_secret_access_key:
-    description: 'ECP platform aws secret key'
-    required: true
   git_token:
     description: 'ECP Github Token'
     required: true
