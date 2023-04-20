@@ -33,9 +33,6 @@ inputs:
   kubectl_version:
     description: 'kubectl binary version'
     required: true
-  aws_iam_auth_version:
-    description: 'aws_iam_auth binary version'
-    required: true
 
 
 runs:
