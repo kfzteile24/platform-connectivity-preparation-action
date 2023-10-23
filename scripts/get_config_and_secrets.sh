@@ -2,7 +2,7 @@
 set -euox pipefail
 
 # Config and secrets preparation:
-mkdir -p kube-config k8s/${PLATFORM_ID}
+mkdir -p k8s/${PLATFORM_ID}
 
 # Pick Config from Platform-code
 if [[ $PLATFORM_ENV == "aws.live" ]];then
