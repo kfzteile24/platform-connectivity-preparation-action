@@ -16,7 +16,10 @@ inputs:
     description: 'ECP Platform name'
     required: true
   kubeconfig:
-    description: 'custom kubeconfig config'
+    description: 'custom kubeconfig config file'
+    required: true
+  kubeconfig_raw:
+    description: 'content of kubeconfig config file'
     required: true
   platform_env:
     description: 'ECP AWS env'

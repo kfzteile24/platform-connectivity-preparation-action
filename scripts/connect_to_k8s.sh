@@ -7,12 +7,11 @@ sudo  openvpn --config KFZ_pritunl.vpn.ovpn --daemon
 sleep 10
 sudo netstat -nr
 
-mkdir -p k8s/${PLATFORM_ID}/kube-config
+mkdir -p kube-config k8s/${PLATFORM_ID}
 
-export KUBECONFIG_FILE=k8s/${PLATFORM_ID}/kube-config/kubeconfig.conf
-echo "${KUBECONFIG}" > ${KUBECONFIG_FILE}
+echo "${KUBECONFIG_RAW}" > ${KUBECONFIG}
 
-export KUBECTL="kubectl --kubeconfig=${KUBECONFIG_FILE}"
+export KUBECTL="kubectl --kubeconfig=${KUBECONFIG}"
 alias kubectl="$KUBECTL"
 
 # Check k8s connectivity:
