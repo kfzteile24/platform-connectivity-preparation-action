@@ -1,6 +1,12 @@
 #!/bin/bash
 set -euox pipefail
 
+# Establish ECP VPN connectivity
+echo "${VPN_PROFILE}" > KFZ_pritunl.vpn.ovpn
+sudo  openvpn --config KFZ_pritunl.vpn.ovpn --daemon
+sleep 10
+sudo netstat -nr
+
 export KUBECTL="kubectl --kubeconfig=${KUBECONFIG}"
 alias kubectl="$KUBECTL"
 

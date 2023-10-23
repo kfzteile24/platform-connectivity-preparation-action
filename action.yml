@@ -9,9 +9,6 @@ inputs:
   git_token:
     description: 'ECP Github Token'
     required: true
-  vault_git_token:
-    description: 'ECP Vault Token'
-    required: true
   platform_code_values_dir:
     description: 'Github Repo path of Platform-code'
     required: true
@@ -23,9 +20,6 @@ inputs:
     required: true
   platform_env:
     description: 'ECP AWS env'
-    required: true
-  vault_version:
-    description: 'vault client binary version'
     required: true
   helm_version:
     description: 'Helm binary version'
@@ -52,4 +46,3 @@ runs:
 branding:
   icon: 'tool'
   color: 'blue'
-

@@ -14,12 +14,3 @@ curl -Ls -o helm.tar.gz "https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.t
 curl -Ls -o kubectl "https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl" \
   && chmod +x kubectl \
   && sudo mv kubectl /usr/local/bin/kubectl
-
-# Install Vault client
-curl -Ls -O "https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip" \
-&& unzip -o vault_${VAULT_VERSION}_linux_amd64.zip \
-&& chmod +x vault \
-&& sudo mv vault /usr/local/bin \
-&& rm vault_${VAULT_VERSION}_linux_amd64.zip
-
-
