@@ -18,4 +18,3 @@ fi
 
 # List all the config and secrets files:
 ls -l k8s/${PLATFORM_ID}
-ls -l kube-config
