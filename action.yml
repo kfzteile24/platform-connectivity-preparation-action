@@ -20,7 +20,10 @@ inputs:
     required: true
   kubeconfig_raw:
     description: 'content of kubeconfig config file'
-    required: true
+    required: false
+  kubeconfig_base64:
+    description: 'content of kubeconfig config file in base64 format'
+    required: false
   platform_env:
     description: 'ECP AWS env'
     required: true
