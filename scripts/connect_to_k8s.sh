@@ -9,7 +9,11 @@ sudo netstat -nr
 
 mkdir -p kube-config k8s/${PLATFORM_ID}
 
-echo "${KUBECONFIG_RAW}" > ${KUBECONFIG}
+if [[ -z ${KUBECONFIG_RAW+x} ]]; then
+  echo "${KUBECONFIG_BASE64}" | base64 --decode > ${KUBECONFIG}
+else
+  echo "${KUBECONFIG_RAW}" > ${KUBECONFIG}
+fi
 
 export KUBECTL="kubectl --kubeconfig=${KUBECONFIG}"
 alias kubectl="$KUBECTL"
