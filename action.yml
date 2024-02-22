@@ -6,12 +6,6 @@ inputs:
   vpn_profile:
     description: 'ECP VPN profile'
     required: true
-  git_token:
-    description: 'ECP Github Token'
-    required: true
-  platform_code_values_dir:
-    description: 'Github Repo path of Platform-code'
-    required: true
   platform_id:
     description: 'ECP Platform name'
     required: true
@@ -24,9 +18,6 @@ inputs:
   kubeconfig_base64:
     description: 'content of kubeconfig config file in base64 format'
     required: false
-  platform_env:
-    description: 'ECP AWS env'
-    required: true
   helm_version:
     description: 'Helm binary version'
     required: true
@@ -42,12 +33,18 @@ runs:
       run: ${{ github.action_path }}/scripts/setup_env.sh
       shell: bash
       working-directory: ${{ runner.temp }}
-    - name: Get Config and secrets files
-      run: ${{ github.action_path }}/scripts/get_config_and_secrets.sh
-      shell: bash
+      env:
+        HELM_VERSION: ${{ inputs.helm_version }}
+        KUBECTL_VERSION: ${{ inputs.kubectl_version }}
     - name: Prepare k8s connectivity
       run: ${{ github.action_path }}/scripts/connect_to_k8s.sh
       shell: bash
+      env:
+        VPN_PROFILE: ${{ inputs.vpn_profile }}
+        PLATFORM_ID: ${{ inputs.platform_id }}
+        KUBECONFIG: ${{ inputs.kubeconfig }}
+        KUBECONFIG_RAW: ${{ inputs.kubeconfig_raw }}
+        KUBECONFIG_BASE64: ${{ inputs.kubeconfig_base64 }}
 
 branding:
   icon: 'tool'
