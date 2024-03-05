@@ -9,8 +9,6 @@ sudo netstat -nr
 
 mkdir -p kube-config k8s/${PLATFORM_ID}
 
-echo "${KUBECONFIG_BASE64}"
-
 if [[ -z ${KUBECONFIG_RAW} ]]; then
   echo "${KUBECONFIG_BASE64}" | base64 --decode > ${KUBECONFIG}
 else
